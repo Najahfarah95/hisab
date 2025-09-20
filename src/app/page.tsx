@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { UserMenu } from "@/components/auth/user-menu"
 
 export default function Home() {
   return (
@@ -26,19 +27,10 @@ export default function Home() {
               <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
                 Pricing
               </a>
-              <a href="#signin" className="text-muted-foreground hover:text-primary transition-colors">
-                Sign In
-              </a>
             </nav>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <Button variant="ghost" size="sm">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </Button>
-            </div>
+            {/* User Menu */}
+            <UserMenu />
           </div>
         </div>
       </header>
@@ -54,7 +46,7 @@ export default function Home() {
             Built for modern businesses that value simplicity and efficiency.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button size="lg" className="text-lg px-8 py-6" onClick={() => window.location.href = '/auth/signin'}>
               Get Started Free
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6">
@@ -134,7 +126,7 @@ export default function Home() {
                 Join thousands of businesses already using Hisabi to manage their finances.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8 py-6">
+                <Button size="lg" className="text-lg px-8 py-6" onClick={() => window.location.href = '/auth/signin'}>
                   Start Free Trial
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6">
